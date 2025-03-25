@@ -8,6 +8,7 @@ export default function Home() {
     <div>
       <Navbar/>
       <HeroSection/>
+      dfgh
       <Recents/>
     </div>
   );
