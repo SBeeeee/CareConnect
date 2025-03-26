@@ -2,6 +2,7 @@ import React from 'react'
 import HealthScore from './HealthScore'
 import ActiveData from './ActiveData'
 
+
 function HeroSection() {
   return (
     <div className="  z-30  mt-2 mx-4 flex flex-wrap justify-center gap-2 text-slate-900">

@@ -1,8 +1,18 @@
-import React from 'react'
-import Link from 'next/link'
+"use client"
+import React from "react";
+import Link from "next/link";
 import { ReportData } from "../data/fhirdata";
+import DetailsModal from "./DetailsModal";
+import { useState } from "react";
 
 function Recents() {
+  const [isOpen, setIsOpen] = useState(false);
+  const openModal = () => {
+   
+    setIsOpen(true);
+  };
+
+
   return (
     <div className="bg-amber-200 mx-8 rounded-2xl mt-2 p-2 text-slate-900 h-80 mb-2 ">
 
@@ -15,15 +25,6 @@ function Recents() {
         {ReportData.entry
           .filter((entry) => entry.resource.resourceType === "Observation")
           .map((observation, index) => {
-            const patientRef = observation.resource.subject.reference.split('/')[1];
-            const patient = ReportData.entry.find(
-              (entry) => entry.resource.resourceType === "Patient" && entry.resource.id === patientRef
-            );
-
-            const patientName = patient
-              ? `${patient.resource.name[0].given.join(' ')} ${patient.resource.name[0].family}`
-              : "Unknown Patient";
-
             const doctorName = observation.resource.performer[0]?.display || "Unknown Doctor";
             const categoryCode = observation.resource.category[0]?.coding[0]?.code;
             const labelType = categoryCode === "exam" ? "Physical" : "Lab";
@@ -31,22 +32,21 @@ function Recents() {
 
             const title = observation.resource.code?.text || "No Title";
             const date = observation.resource.effectiveDateTime
-              ? new Date(observation.resource.effectiveDateTime).toLocaleDateString()
+              ? observation.resource.effectiveDateTime.split("T")[0]
               : "No Date";
 
             return (
               <div key={index} className="border rounded-2xl h-20 flex items-center px-4 justify-between mt-2 bg-white/10 shadow-sm">
                 
-                {/* Patient & Doctor */}
+                {/* Doctor Name & Date */}
                 <div className="w-1/3">
-                  <div className="font-semibold">{patientName}</div>
-                  <div className="text-sm">Doctor: {doctorName}</div>
+                  <div className="font-semibold">{doctorName}</div>
+                  <div className="text-sm text-gray-600">{date}</div>
                 </div>
 
-                {/* Title & Date */}
-                <div className="w-1/3 text-center">
-                  <div className="font-semibold">{title}</div>
-                  <div className="text-sm text-gray-600">{date}</div>
+                {/* Title (Standalone) */}
+                <div className="w-1/3 text-center font-semibold">
+                  {title}
                 </div>
 
                 {/* Tags & Button */}
@@ -54,16 +54,16 @@ function Recents() {
                   <div className={`bg-gray-200 ${labelColor} font-medium text-center rounded-2xl w-24 h-8 pt-1`}>
                     {labelType}
                   </div>
-                  <button className="border-x-4 border-y-2 rounded-2xl px-4 py-1">View</button>
+                  <button onClick={()=>{openModal()}} className="border-x-4 border-y-2 rounded-2xl px-4 py-1">View</button>
                 </div>
 
               </div>
             );
           })}
       </div>
-
+<DetailsModal isOpen={isOpen} onClose={() => setIsOpen(false)}/>
     </div>
-  )
+  );
 }
 
-export default Recents
+export default Recents;
