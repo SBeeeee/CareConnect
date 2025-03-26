@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 
 function DetailsModal({ isOpen, onClose,title,date,doctorname,label,details}) {

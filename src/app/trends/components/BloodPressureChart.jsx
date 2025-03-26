@@ -3,7 +3,7 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } f
 
 export default function BloodPressureChart({ data }) {
   return (
-    <div className="bg-white rounded-2xl p-4 shadow-md">
+    <div className="bg-white rounded-2xl p-4 shadow-2xl">
       <h2 className="text-xl font-semibold mb-4">Blood Pressure</h2>
       <ResponsiveContainer width="100%" height={300}>
         <LineChart data={data}>

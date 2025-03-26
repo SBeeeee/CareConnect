@@ -24,7 +24,7 @@ function Recents() {
 
 
   return (
-    <div className="bg-amber-200 mx-8 rounded-2xl mt-2 p-2 text-slate-900 h-80 mb-2 ">
+    <div className=" mx-8 bg-white shadow-2xl border border-gray-200 rounded-2xl mt-2 p-2 text-slate-900 h-80 mb-2 ">
 
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold">Recent Health Records</h1>
