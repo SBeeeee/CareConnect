@@ -1,9 +1,10 @@
 import React from 'react'
+import Visualization from './components/Visualization'
 
 function page() {
   return (
-    <div>
-      
+    <div className="">
+      <Visualization/>
     </div>
   )
 }

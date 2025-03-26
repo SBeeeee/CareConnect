@@ -6,7 +6,7 @@ function Sidebar() {
 const [Open,setOpen]=useState(false);
 
   return (
-    <div className={`${Open?"w-64":"w-12"}  text-gray-800 bg-[#2C2C2C] min-h-screen transition-all duration-300`}>
+    <div className={`${Open?"w-64":"w-12"} flex-shrink-0 text-gray-800 bg-[#2C2C2C] min-h-screen transition-all duration-300`}>
       <div className="flex justify-between items-center p-4 " onClick={()=>{setOpen(!Open)}}>
         <h1 className={`text-lg font-medium ${Open?"block":"hidden"}`}>CareConnect</h1>
         <button >
