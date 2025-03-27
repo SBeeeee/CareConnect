@@ -8,7 +8,7 @@ function Sidebar() {
   const [Open, setOpen] = useState(false);
 
   return (
-    <div onClick={() => setOpen(!Open)} className={`${Open ? "w-64" : "w-16"} flex-shrink-0  text-white bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] transition-all duration-300 shadow-lg h-screen`}>
+    <div onClick={() => setOpen(!Open)} className={`${Open ? "w-64" : "w-16"} flex-shrink-0  text-white bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] transition-all duration-300 shadow-lg min-h-screen`}>
     
       <div className="flex justify-between items-center p-4">
         {Open && <h1 className="text-lg font-medium">CareConnect</h1>}
