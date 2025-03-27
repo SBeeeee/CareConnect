@@ -12,7 +12,7 @@ function Sidebar() {
     
       <div className="flex justify-between items-center p-4">
         {Open && <h1 className="text-lg font-medium">CareConnect</h1>}
-        <button  className="text-white">
+        <button  className="text-white ml-2">
           {Open ? "◀" : "▶"}
         </button>
       </div>
