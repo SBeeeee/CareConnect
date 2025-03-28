@@ -5,7 +5,7 @@ import { MdOutlineFileUpload } from "react-icons/md";
 
 function Navbar() {
   return (
-    <div className=" px-4 shadow-lg bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] text-gray-200 h-12 flex justify-between items-center">
+    <div className=" px-4 shadow-lg bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] text-gray-200 h-12 flex justify-between items-center sticky top-0">
       <Link href="contact" className="text-xl font-bold">CareConnect</Link>
       <div className="flex gap-4 items-center">
       <Link href="" className="text-lg">Health Reports</Link>
