@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { MdDashboard } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { IoIosSettings, IoIosLogOut } from "react-icons/io";
+import { IoIosNotificationsOutline } from "react-icons/io";
+import { MdSupportAgent } from "react-icons/md";
 
 function Sidebar() {
   const [Open, setOpen] = useState(false);
@@ -43,6 +45,18 @@ function Sidebar() {
           <div className="flex items-center gap-2">
             <IoIosLogOut className="text-xl min-w-[24px]" />
             <span className={`${Open ? "block" : "hidden"}`}>Logout</span>
+          </div>
+        </li>
+        <li className="hover:bg-gray-700 p-2 rounded cursor-pointer">
+          <div className="flex items-center gap-2">
+            <IoIosNotificationsOutline className="text-xl min-w-[24px]" />
+            <span className={`${Open ? "block" : "hidden"}`}>Notifications</span>
+          </div>
+        </li>
+        <li className="hover:bg-gray-700 p-2 rounded cursor-pointer">
+          <div className="flex items-center gap-2">
+            <MdSupportAgent className="text-xl min-w-[24px]" />
+            <span className={`${Open ? "block" : "hidden"}`}>Support</span>
           </div>
         </li>
       </ul>

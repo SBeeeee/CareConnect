@@ -35,7 +35,9 @@ const steps = [
 
 function TimeLine() {
   return (
-    <div className="timeline relative max-w-[1200px] mx-auto my-[100px]  
+    <div>
+    <h1 className="text-4xl font-bold text-slate-900 text-center mt-10 mb-2">Steps To Follow </h1>
+    <div className="timeline relative max-w-[1200px] mx-auto my-2
       after:content-[''] after:absolute after:w-[6px] after:h-full 
       after:bg-black after:top-0 after:left-1/2 after:-ml-[3px] after:z-[-1]">
       
@@ -60,6 +62,7 @@ function TimeLine() {
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 }
