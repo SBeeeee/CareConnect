@@ -4,3 +4,26 @@ body{
      background-color: #FFF8DC; 
 
 }
+.right-container-arrow{
+     height:0;
+     width:0;
+     position:absolute;
+     top:28px;
+     z-index: 1;
+     border-top:15px solid transparent;
+     border-bottom:15px solid transparent;
+     border-right:15px solid red;
+     left:-18px;
+}
+.left-container-arrow{
+     height:0;
+     width:0;
+     position:absolute;
+     top:28px;
+     z-index:1;
+     border-top:15px solid transparent;
+     border-bottom:15px solid transparent;
+     border-left:15px solid red;
+     
+     right: -17.5px;
+}

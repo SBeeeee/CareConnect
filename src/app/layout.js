@@ -2,7 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
-
+import Footer from "./components/Footer";
 
 
 export const metadata = {
@@ -17,7 +17,10 @@ export default function RootLayout({ children }) {
       <Navbar/>
       <div className="flex" >
       <Sidebar/>
+      <div>
       {children}
+      <Footer/>
+      </div>
       </div>
     
       </body>
